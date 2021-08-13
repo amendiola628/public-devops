@@ -21,7 +21,7 @@ jobs:
            <-- @here Pull Request is ready for review --> 
            Author: ${{ github.event.pull_request.user.login }} 
            Requested Reviewers: ${{ github.event.pull_request.user.requested_reviewers }}
-           PR URL: ${{ github.event.pull_request.url }} 
+           PR URL: ${{ github.event.pull_request.html_url }} 
            PR Diff: ${{ github.event.pull_request.diff_url }} 
            :large_green_circle: :large_green_circle: :large_green_circle:'
         SLACK_TITLE: Pull Request Notification
