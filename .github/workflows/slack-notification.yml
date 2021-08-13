@@ -16,7 +16,7 @@ jobs:
         SLACK_CHANNEL: devops
         SLACK_COLOR: ${{ job.status }} # or a specific color like 'good' or '#ff00ff'
         SLACK_ICON: https://github.com/rtCamp.png?size=48
-        SLACK_MESSAGE: ':large_green_circle: :gandalf: @here Pull Request is ready for review :large_green_circle: :github_octocat:'
+        SLACK_MESSAGE: ':large_green_circle: :gandalf: @here Pull Request is ready for review --> ${{ github.event.pull_request.number }} :large_green_circle: :github_octocat:'
         SLACK_TITLE: Pull Request Notification
         SLACK_USERNAME: Github-Action-Bot
         SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
