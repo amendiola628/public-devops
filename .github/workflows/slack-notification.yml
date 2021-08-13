@@ -16,7 +16,12 @@ jobs:
         SLACK_CHANNEL: devops
         SLACK_COLOR: ${{ job.status }} # or a specific color like 'good' or '#ff00ff'
         SLACK_ICON: https://github.com/rtCamp.png?size=48
-        SLACK_MESSAGE: ':large_green_circle: <-- @here Pull Request is ready for review -->\\n\\n Author: ${{ github.event.pull_request.user.login }} \\n\\n Requested Reviewers: ${{ github.event.pull_request.user.requested_reviewers }} \\n\\n PR Number: ${{ github.event.pull_request.number }} \\n\\n PR URL: ${{ github.event.pull_request.url }} \\n\\n PR Number: ${{ github.event.pull_request.diff_url }} :large_green_circle:'
+        SLACK_MESSAGE: > 
+          ':large_green_circle: <-- @here Pull Request is ready for review --> 
+           Author: ${{ github.event.pull_request.user.login }} 
+           Requested Reviewers: ${{ github.event.pull_request.user.requested_reviewers }}
+           PR URL: ${{ github.event.pull_request.url }} 
+           PR Diff: ${{ github.event.pull_request.diff_url }} :large_green_circle:'
         SLACK_TITLE: Pull Request Notification
         SLACK_USERNAME: Github-Action-Bot
         SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
