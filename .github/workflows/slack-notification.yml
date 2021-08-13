@@ -1,0 +1,23 @@
+name: Pull Request Slack Notification
+
+on:
+  pull_request:
+    types: [ labeled ]
+
+jobs:
+  build:
+    if: ${{ github.event.label.name == 'Review Required' }}
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Slack Notification
+      uses: rtCamp/action-slack-notify@v2
+      env:
+        SLACK_CHANNEL: devops
+        SLACK_COLOR: ${{ job.status }} # or a specific color like 'good' or '#ff00ff'
+        SLACK_ICON: https://github.com/rtCamp.png?size=48
+        SLACK_MESSAGE: ':large_green_circle: :gandalf: @here Pull Request is ready for review :large_green_circle: :github_octocat:'
+        SLACK_TITLE: Pull Request Notification
+        SLACK_USERNAME: Github-Action-Bot
+        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+        SLACK_LINK_NAMES: true
