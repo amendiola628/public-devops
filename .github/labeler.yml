@@ -1,0 +1,7 @@
+# Github Action Labeler Marketplace - https://github.com/marketplace/actions/labeler
+Documentation:
+- any: ['*.md','**/*.md']
+
+Infrastructure:
+- any: ['infrastructure/**/*']
+  all: ['!infrastructure/*.md','!infrastructure/**/*.md']
