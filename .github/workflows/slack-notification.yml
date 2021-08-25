@@ -17,12 +17,12 @@ jobs:
         SLACK_COLOR: ${{ job.status }} # or a specific color like 'good' or '#ff00ff'
         SLACK_ICON: https://github.com/rtCamp.png?size=48
         SLACK_MESSAGE: > 
-          ':large_green_circle: :large_green_circle: :large_green_circle:
+          '
            <-- @here Pull Request is ready for review --> 
            Author: ${{ github.event.pull_request.user.login }} 
            Title: ${{ github.event.pull_request.title }}
            PR URL: ${{ github.event.pull_request.html_url }} 
-           :large_green_circle: :large_green_circle: :large_green_circle:'
+          '
         SLACK_TITLE: Pull Request Notification
         SLACK_USERNAME: Github-Action-Bot
         SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
